@@ -29,16 +29,16 @@ services:
     command: ['--default-authentication-plugin=mysql_native_password', '--character-set-server=utf8', '--collation-server=utf8_general_ci']
 
   phpmyadmin:
-    image: phpmyadmin/phpmyadmin
+    image: phpmyadmin/phpmyadmin:latest
     container_name: symfony-phpmyadmin
     ports:
-      - 6060:9060
+      - "6070:80"
     links:
       - mysql
     environment:
       PMA_HOST: mysql
-      PMA_PORT: 3306
-      PMA_ARBITRARY: 1
+      PMA_USER: root
+      PMA_PASSWORD: symfonypassword
     restart: always
 
 volumes:
