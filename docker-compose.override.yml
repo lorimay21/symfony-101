@@ -1,0 +1,14 @@
+version: '3.3'
+
+services:
+  apache:
+    ports:
+      - 6050:80
+
+  mysql:
+    ports:
+      - 6030:3306
+
+  phpmyadmin:
+    ports:
+      - 6060:6060
